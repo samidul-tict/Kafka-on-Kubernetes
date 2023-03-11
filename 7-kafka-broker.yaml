@@ -24,12 +24,12 @@ spec:
         - name: kafka-cm
           mountPath: "/etc/configmap"
           readOnly: true
-        - name: kafka-data
-          mountPath: "/bitnami/kafka"
+        # - name: kafka-data
+        #   mountPath: "/bitnami/kafka"
       volumes:
       - name: kafka-cm
         configMap:
           name: kafka-config
-      - name: kafka-data
-        persistentVolumeClaim:
-          claimName: kafka-pv-claim
+      # - name: kafka-data
+      #   persistentVolumeClaim:
+      #     claimName: kafka-pv-claim
