@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-broker
+  namespace: kafka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        app: kafka
+        id: "0"
+  template:
+    metadata:
+      labels:
+        app: kafka
+        id: "0"
+    spec:
+      containers:
+      - name: kafka
+        image: wurstmeister/kafka
+        ports:
+        - containerPort: 9092
+        volumeMounts:
+        - name: kafka-cm
+          mountPath: "/etc/configmap"
+          readOnly: true
+      volumes:
+      - name: kafka-cm
+        configMap:
+          name: kafka-config
