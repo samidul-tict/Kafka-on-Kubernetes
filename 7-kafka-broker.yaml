@@ -12,12 +12,14 @@ spec:
   template:
     metadata:
       labels:
-        app: kafka
+        app: kafka-broker
         id: "0"
     spec:
+      hostname: kafka-broker
       containers:
-      - name: kafka
+      - name: kafka-broker
         image: bitnami/kafka:latest
+        imagePullPolicy: "IfNotPresent"
         ports:
         - containerPort: 9092
         volumeMounts:
