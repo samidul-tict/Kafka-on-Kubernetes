@@ -1,0 +1,31 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: kafka-pv-volume  # Sets PV's name
+  namespace: kafka
+  labels:
+    type: local  # Sets PV's type to local
+    app: kafka
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 50Gi # Sets PV Volume
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/kube-storage/kafka/data"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: kafka-pv-claim  # Sets name of PVC
+  namespace: kafka
+  labels:
+    app: kafka
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany  # Sets read and write access
+  resources:
+    requests:
+      storage: 10Gi  # Sets volume size

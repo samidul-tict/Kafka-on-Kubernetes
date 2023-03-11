@@ -17,14 +17,19 @@ spec:
     spec:
       containers:
       - name: kafka
-        image: wurstmeister/kafka
+        image: bitnami/kafka:latest
         ports:
         - containerPort: 9092
         volumeMounts:
         - name: kafka-cm
           mountPath: "/etc/configmap"
           readOnly: true
+        - name: kafka-data
+          mountPath: "/bitnami/kafka"
       volumes:
       - name: kafka-cm
         configMap:
           name: kafka-config
+      - name: kafka-data
+        persistentVolumeClaim:
+          claimName: kafka-pv-claim
