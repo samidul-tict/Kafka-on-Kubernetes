@@ -7,4 +7,4 @@ metadata:
     app: zookeeper-config
 data:
   ZOOKEEPER_ID: "1"
-  ZOOKEEPER_SERVER_1: zoo1
+  ZOOKEEPER_SERVER_1: zookeeper1
