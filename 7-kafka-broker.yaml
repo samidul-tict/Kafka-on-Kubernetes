@@ -18,7 +18,7 @@ spec:
       hostname: kafka-broker
       containers:
       - name: kafka-broker
-        image: bitnami/kafka:latest
+        image: confluentinc/cp-kafka:latest
         imagePullPolicy: "IfNotPresent"
         ports:
         - containerPort: 9092
