@@ -6,6 +6,7 @@ metadata:
   labels:
     app: zookeeper
 spec:
+  type: NodePort
   ports:
   - name: client
     port: 2181
