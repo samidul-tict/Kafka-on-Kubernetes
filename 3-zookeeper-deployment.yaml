@@ -19,26 +19,26 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 2181
-        # env:
-        # - name: ZOOKEEPER_CLIENT_PORT
-        #   valueFrom:
-        #     configMapKeyRef:
-        #       name: zookeeper-config
-        #       key: ZOOKEEPER_CLIENT_PORT
-        # - name: ZOOKEEPER_SECURE_CLIENT_PORT
-        #   valueFrom:
-        #     configMapKeyRef:
-        #       name: zookeeper-config
-        #       key: ZOOKEEPER_SECURE_CLIENT_PORT
-        # - name: ZOOKEEPER_TICK_TIME
-        #   valueFrom:
-        #     configMapKeyRef:
-        #       name: zookeeper-config
-        #       key: ZOOKEEPER_TICK_TIME
-        volumeMounts:
-        - name: zookeeper-cm
-          mountPath: /etc/configmap
-      volumes:
-      - name: zookeeper-cm
-        configMap:
-          name: zookeeper-config
+        env:
+        - name: ZOOKEEPER_CLIENT_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: zookeeper-config
+              key: ZOOKEEPER_CLIENT_PORT
+        - name: ZOOKEEPER_SECURE_CLIENT_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: zookeeper-config
+              key: ZOOKEEPER_SECURE_CLIENT_PORT
+        - name: ZOOKEEPER_TICK_TIME
+          valueFrom:
+            configMapKeyRef:
+              name: zookeeper-config
+              key: ZOOKEEPER_TICK_TIME
+      #   volumeMounts:
+      #   - name: zookeeper-cm
+      #     mountPath: /etc/configmap
+      # volumes:
+      # - name: zookeeper-cm
+      #   configMap:
+      #     name: zookeeper-config
