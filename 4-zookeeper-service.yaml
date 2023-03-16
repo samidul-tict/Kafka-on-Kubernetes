@@ -6,12 +6,11 @@ metadata:
   labels:
     app: zookeeper
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - name: client
     port: 2181
     targetPort: 2181
-    nodePort: 30434
     protocol: TCP
   - name: follower
     port: 2888
