@@ -16,13 +16,12 @@ spec:
       containers:
       - name: zookeeper
         image: confluentinc/cp-zookeeper:latest
-        imagePullPolicy: "IfNotPresent"
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 2181
         volumeMounts:
         - name: zookeeper-cm
-          mountPath: "/etc/configmap"
-          readOnly: true
+          mountPath: /etc/configmap
       volumes:
       - name: zookeeper-cm
         configMap:

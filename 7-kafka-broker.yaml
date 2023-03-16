@@ -24,7 +24,7 @@ spec:
         - containerPort: 9092
         volumeMounts:
         - name: kafka-cm
-          mountPath: "/etc/configmap"
+          mountPath: /etc/configmap
           readOnly: true
         # - name: kafka-data
         #   mountPath: "/bitnami/kafka"
