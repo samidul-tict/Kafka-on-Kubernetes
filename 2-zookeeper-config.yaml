@@ -6,7 +6,6 @@ metadata:
   labels:
     app: zookeeper-config
 data:
-  ZOOKEEPER_ID: "1"
   ZOOKEEPER_SERVER_1: zookeeper1
   ZOOKEEPER_CLIENT_PORT: "32181"
   ZOOKEEPER_SECURE_CLIENT_PORT: "32182"
