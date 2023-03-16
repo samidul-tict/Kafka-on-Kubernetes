@@ -7,13 +7,12 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-        app: kafka-broker
+        app: kafka
   template:
     metadata:
       labels:
-        app: kafka-broker
+        app: kafka
     spec:
-      hostname: kafka-broker
       containers:
       - name: kafka-broker
         image: confluentinc/cp-kafka:latest
