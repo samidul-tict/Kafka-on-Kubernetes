@@ -7,4 +7,4 @@ metadata:
     app: kafka-config
 data:
   KAFKA_ZOOKEEPER_CONNECT: zookeeper-svc:2181
-  KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-svc-ext:30433
+  KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-svc:9092,PLAINTEXT://kafka-svc-ext:30433
