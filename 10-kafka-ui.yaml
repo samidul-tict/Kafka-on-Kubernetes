@@ -21,4 +21,4 @@ spec:
         - name: KAFKA_CLUSTERS_0_NAME
           value: mykafka
         - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
-          value: kafka-svc:9092
+          value: zookeeper-svc:2181
