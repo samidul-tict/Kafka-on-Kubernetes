@@ -18,7 +18,7 @@ spec:
         image: provectuslabs/kafka-ui:master
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8091
+        - containerPort: 8080
         env:
         - name: KAFKA_CLUSTERS_0_NAME
           value: mykafka
