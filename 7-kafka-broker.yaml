@@ -35,11 +35,6 @@ spec:
             configMapKeyRef:
               name: kafka-config
               key: KAFKA_ADVERTISED_LISTENERS
-        - name: KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR
-          valueFrom:
-            configMapKeyRef:
-              name: kafka-config
-              key: KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR
         # volumeMounts:
         # - name: kafka-cm
         #   mountPath: /etc/configmap
