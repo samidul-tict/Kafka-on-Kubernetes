@@ -13,6 +13,7 @@ spec:
       labels:
         app: kafka
     spec:
+      hostname: mykafka
       containers:
       - name: kafka-broker
         image: confluentinc/cp-kafka:latest
