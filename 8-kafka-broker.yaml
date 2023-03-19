@@ -34,16 +34,16 @@ spec:
             configMapKeyRef:
               name: kafka-config
               key: KAFKA_ADVERTISED_LISTENERS
-        # volumeMounts:
+        volumeMounts:
+        - name: kafka-data
+          mountPath: "/confluentinc/kafka/data"
         # - name: kafka-cm
         #   mountPath: /etc/configmap
         #   readOnly: true
-        # - name: kafka-data
-        #   mountPath: "/bitnami/kafka"
-      # volumes:
+      volumes:
+      - name: kafka-data
+        persistentVolumeClaim:
+          claimName: kafka-pv-claim
       # - name: kafka-cm
       #   configMap:
       #     name: kafka-config
-      # - name: kafka-data
-      #   persistentVolumeClaim:
-      #     claimName: kafka-pv-claim

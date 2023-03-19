@@ -17,10 +17,11 @@ spec:
       - name: kafka-ui
         image: provectuslabs/kafka-ui:master
         imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 8080
         env:
         - name: KAFKA_CLUSTERS_0_NAME
           value: mykafka
         - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
-          value: mykafka:9092
+          valueFrom:
+            configMapKeyRef:
+              name: kafka-config
+              key: KAFKA_ZOOKEEPER_CONNECT
