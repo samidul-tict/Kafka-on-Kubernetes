@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-config
+  namespace: kafka
+  labels:
+    app: kafka-config
+data:
+  KAFKA_BROKER_ID: "1"
+  KAFKA_ZOOKEEPER_CONNECT: zookeeper-svc:2181
+  KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://mykafka:9092

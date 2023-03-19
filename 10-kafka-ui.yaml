@@ -23,4 +23,4 @@ spec:
         - name: KAFKA_CLUSTERS_0_NAME
           value: mykafka
         - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
-          value: 192.168.1.228:30434
+          value: mykafka:9092
