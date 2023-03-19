@@ -21,7 +21,4 @@ spec:
         - name: KAFKA_CLUSTERS_0_NAME
           value: mykafka
         - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
-          valueFrom:
-            configMapKeyRef:
-              name: kafka-config
-              key: KAFKA_ZOOKEEPER_CONNECT
+          value: mykafka:9092
