@@ -19,7 +19,10 @@ spec:
         image: confluentinc/cp-kafka:latest
         imagePullPolicy: IfNotPresent
         ports:
-          - containerPort: 9092
+          - name: INTERNAL
+              containerPort: 9092
+          - name: EXTERNAL
+            containerPort: 29092
         env:
         - name: KAFKA_ZOOKEEPER_CONNECT
           valueFrom:
